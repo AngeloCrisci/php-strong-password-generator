@@ -4,14 +4,7 @@
 
 
 
-function generate_password(){
-    $characters = '!"#$%&()*+,-./:;=?@[\]^_{|}~0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    $random_string = '';
-    for ($i = 0; $i < $_GET['number']; $i++){
-        $random_string = $characters[rand(0 , strlen($characters))];
-    }
-    return $random_string;
-}
+
 
 ?>
 
@@ -31,7 +24,17 @@ function generate_password(){
     <div class="container">
         <h1 class="text-center mt-5 mb-3"> STRONG PASSWORD GENERATOR</h1>
         <h2 class="text-center">Genera una password sicura</h2>
-        <?php if(isset($_GET['number']) )generate_password();
+        <?php if(isset($_GET['number'])){
+            function generate_password(){
+            $characters = '!"#$%&()*+,-./:;=?@[\]^_{|}~0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            $random_string = '';
+            for ($i = 0; $i < $_GET['number']; $i++){
+                $random_string = $characters[rand(0 , strlen($characters))];
+            }
+            return $random_string;
+        }}
+
+        
         { ?>
         <div class="smallbox">
             <p class="p-3"> <?= $random_string ?>  </p>
