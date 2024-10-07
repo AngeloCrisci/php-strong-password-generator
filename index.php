@@ -1,11 +1,10 @@
 
 <?php
-
-
-
-
-
-
+ function getStrongRandomPassword($chars)
+ {
+     $characters = '!"#$%&()*+,-./:;=?@[]^_{|}~;1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcefghijklmnopqrstuvwxyz';
+     return substr(str_shuffle($characters), 0, $chars);
+ }
 ?>
 
 
@@ -23,23 +22,16 @@
 <body>
     <div class="container">
         <h1 class="text-center mt-5 mb-3"> STRONG PASSWORD GENERATOR</h1>
-        <h2 class="text-center">Genera una password sicura</h2>
-        <?php if(isset($_GET['number'])){
-            function generate_password(){
-            $characters = '!"#$%&()*+,-./:;=?@[\]^_{|}~0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-            $random_string = '';
-            for ($i = 0; $i < $_GET['number']; $i++){
-                $random_string = $characters[rand(0 , strlen($characters))];
-            }
-            return $random_string;
-        }}
+        <h2 class="text-center">Genera una password sicura</h2> 
+        <div class="smallbox">
+        <?php if(isset($_GET['number']) && ($_GET['number'] >= 8)) { ?>
+           <p class="p-3"> <?= getStrongRandomPassword((int)$_GET['number'])?></p> 
+        <?php } else { ?>
+            <p>DATO NON VALIDO</p>
+        <?php }?>
+        </div>
 
         
-        { ?>
-        <div class="smallbox">
-            <p class="p-3"> <?= $random_string ?>  </p>
-        </div>
-        <?php } ?>
         <div class="big-box">
             <form action="" method="GET">
                 <div class="row p-3">
