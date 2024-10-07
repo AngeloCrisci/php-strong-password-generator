@@ -10,3 +10,13 @@ h1 {
 h2 {
     color: white;
 }
+
+.smallbox{
+    background-color: #CFF4FC;
+    color: #2B7480;
+}
+
+.big-box{
+    background-color: white;
+    height: 500px;
+}
