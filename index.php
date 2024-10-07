@@ -9,6 +9,9 @@
     </head>
 
 <body>
-    
+    <div class="container">
+        <h1 class="text-center mt-5 mb-3"> STRONG PASSWORD GENERATOR</h1>
+        <h2 class="text-center">Genera una password sicura</h2>
+    </div>
 </body>
 </html>
